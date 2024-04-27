@@ -1,6 +1,9 @@
 let container = document.querySelector('.main-container')
 let categorySelect = document.querySelector('select')
+let searchInput = document.querySelector('input')
 
+
+// function to show the products
 function showData(arr){
     container.innerHTML = ''
     arr.forEach((ele, i) => {
@@ -34,6 +37,7 @@ function showData(arr){
     })
 }
 
+// function to get the URL pass to the showData function as an Array
 function getData(url){
     fetch(url)
     .then(res => res.json())
@@ -42,6 +46,8 @@ function getData(url){
         showData(res)})
 }
 
+
+//function to show products category wise
 function changeCategory(){
     let value = categorySelect.value
     
